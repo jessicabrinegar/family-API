@@ -6,6 +6,7 @@ update this file to implement the following already declared methods:
 - get_member: Should return a member from the self._members list
 """
 from random import randint
+
 class FamilyStructure:
     def __init__(self,  last_name, ):
         # self.first_name = first_name
@@ -13,6 +14,7 @@ class FamilyStructure:
         # self.age = age
         # self.lucky_numbers = lucky_numbers
         # self.id = id
+
         # example list of members
         self._members = [
             {
@@ -38,17 +40,17 @@ class FamilyStructure:
                 "id": self._generateId()
             },
         ]
+
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
         return randint(0, 100)
-
 
     def add_member(self, member):
         # fill this method and update the return
         self._members.append(member)
         return 200
-        
         #HINT - APPEND
+
     def delete_member(self, id):
         # fill this method and update the return
         #HINT - POP. wE ARE GOING TO SEARCH BY ID, FIND THE ID, IF FOUND, TELL ME WHHAT INDEX OF THE MEMBER (NUMBER IN ARRAY) THEN POP OFF (DELETE)
@@ -57,11 +59,13 @@ class FamilyStructure:
                 index = self._members.index(member)
                 self._members.pop(index)
                 return 200
+
     def get_member(self, id):
         # fill this method and update the return
         for member in self._members:
             if member['id'] == id:
                 return member
+
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
         return self._members
